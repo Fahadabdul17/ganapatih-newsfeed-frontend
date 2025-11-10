@@ -450,9 +450,9 @@ This project is created for the Ganapatih Full-Stack Developer Take-Home Test.
 ## 📧 Contact
 
 For questions or issues, please contact:
-- **Email:** your.email@example.com
-- **GitHub:** [@yourusername](https://github.com/yourusername)
-- **LinkedIn:** [Your Name](https://linkedin.com/in/yourprofile)
+- **Email:** fahadra96@gmail.com
+- **GitHub:** [Fahadabdul17](https://github.com/Fahadabdul17)
+- **LinkedIn:** [Fahad Abdul Aziz](https://www.linkedin.com/in/fahadabdulaziz17)
 
 ---
 
