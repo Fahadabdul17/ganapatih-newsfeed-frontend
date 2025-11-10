@@ -1,13 +1,67 @@
-node_modules
-dist
-.git
+# Dependencies (will be installed in Docker)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output (will be built in Docker)
+dist/
+dist-ssr/
+build/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Environment files (use Docker ENV instead)
 .env
 .env.local
-.env.production
-.DS_Store
-*.log
-npm-debug.log*
-coverage
-.vscode
-.idea
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation
 README.md
+CHANGELOG.md
+LICENSE
+*.md
+
+# Testing
+coverage/
+.nyc_output/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Docker files
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Misc
+.cache/
+.tmp/
+*.tmp
+.eslintcache
+*.tsbuildinfo
