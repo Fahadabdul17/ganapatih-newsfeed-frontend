@@ -1,0 +1,14 @@
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-https://ganapatih-newsfeed-backend-production.up.railway.app/api}
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    container_name: newsfeed-frontend
+    environment:
+      - NODE_ENV=production

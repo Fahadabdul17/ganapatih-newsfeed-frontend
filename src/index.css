@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  
+  body {
+    @apply text-white min-h-screen;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/10 shadow-2xl;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  
+  .glass-card-hover:hover {
+    @apply border-white/20;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-medium transition-all duration-200;
+  }
+  
+  .btn:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn text-white shadow-lg;
+    background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #6d28d9 0%, #4338ca 100%);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.5);
+  }
+
+  .btn-secondary {
+    @apply btn text-white border border-white/20;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-danger {
+    @apply btn text-red-300 border border-red-500/30;
+    background: rgba(239, 68, 68, 0.2);
+  }
+  
+  .btn-danger:hover:not(:disabled) {
+    background: rgba(239, 68, 68, 0.3);
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-xl text-white transition-all;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .input::placeholder {
+    @apply text-gray-400;
+  }
+  
+  .input:focus {
+    @apply outline-none;
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+
+  .input-error {
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+  
+  .input-error:focus {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  }
+
+  .heading {
+    @apply text-3xl font-bold;
+    background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subheading {
+    @apply text-xl font-semibold text-gray-200;
+  }
+
+  .text-muted {
+    @apply text-gray-400 text-sm;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium text-white border border-white/20;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .spinner {
+    @apply inline-block w-5 h-5 rounded-full animate-spin;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #e879f9 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .container-custom {
+    @apply max-w-4xl mx-auto px-4;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Add at the end of index.css */
+
+/* Responsive Container */
+.container-custom {
+  @apply w-full mx-auto px-4;
+  max-width: 1024px;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    @apply px-8;
+  }
+}
+
+/* Responsive Text */
+@media (max-width: 640px) {
+  .heading {
+    @apply text-2xl;
+  }
+  
+  .subheading {
+    @apply text-lg;
+  }
+}
